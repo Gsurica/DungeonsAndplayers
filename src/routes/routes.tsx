@@ -10,6 +10,7 @@ export const AppRoutes = () => {
       <Routes>
         <Route element={<Home />} path="/home" />
         <Route element={<EsClassPage />} path="/class/:classIndex" />
+        <Route path="/" element={<Navigate to="/home" />} />
       </Routes>
     </BrowserRouter>
   )
