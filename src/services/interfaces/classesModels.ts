@@ -19,7 +19,7 @@ export interface ClassMetaData {
   savingThrows: ClassData[]
   spellcasting?: SpellCastingMetaData
   starting_equipment: InitialEquipamentModel[]
-  starting_equipment_options: any[]
+  starting_equipment_options: StartingEquipmentOptions[]
 }
 
 // multiclassing
@@ -59,7 +59,7 @@ export interface OptionsObjectModel {
 // equipament models
 
 export interface InitialEquipamentModel {
-  equipament: ClassData[] 
+  equipment: ClassData 
   quantity: number
 }
 
@@ -74,6 +74,24 @@ export interface SpellCastingMetaData {
 export interface SpellCastingInfoData {
   name: string
   desc: string[]
+}
+
+export interface StartingEquipmentOptions {
+  choose: number
+  desc: string
+  from: StartingEquipmentFromModel
+  type: string
+}
+
+export interface StartingEquipmentFromModel {
+  option_set_type: string 
+  options: StartingEquipmentOptionsFromModel[]
+}
+
+export interface StartingEquipmentOptionsFromModel {
+  option_type: string
+  count: number
+  of: ClassData
 }
 
 
