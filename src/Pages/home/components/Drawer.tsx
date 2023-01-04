@@ -22,7 +22,9 @@ const PageItems: PageItems[] = [
   { name: "Home", icon: <MagicBookIcon />, navigate: "/home" },
   { name: "Spells", icon: <PrincipalPageIcon />, navigate: "/spells" },
   { name: "Features", icon: <HabilityIcon />, navigate: "/feat" },
-  { name: "Monsters", icon: "", navigate: "/monsters" }
+  { name: "Monsters", icon: "", navigate: "/monsters" },
+  { name: "rules", icon: "", navigate: "/rules" },
+  { name: "equipments", icon: "", navigate: "/equipments" },
 ]
 
 
