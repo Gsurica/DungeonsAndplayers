@@ -19,9 +19,9 @@ interface PageItems {
 }
 
 const PageItems: PageItems[] = [
-  { name: "pagina inicial", icon: <MagicBookIcon />, navigate: "/home" },
-  { name: "magias", icon: <PrincipalPageIcon />, navigate: "" },
-  { name: "habilidades", icon: <HabilityIcon />, navigate: "" }
+  { name: "Home", icon: <MagicBookIcon />, navigate: "/home" },
+  { name: "Spells", icon: <PrincipalPageIcon />, navigate: "/spells" },
+  { name: "Features", icon: <HabilityIcon />, navigate: "/feat" }
 ]
 
 
@@ -61,10 +61,10 @@ export const SideDrawer: React.FC<DrawerTypes> = ({ openDrawer, closeDrawerHandl
             flexDirection: "column"
           }}> 
             <Typography letterSpacing={2}>
-              Páginas!
+              Pages
             </Typography>
             <Typography padding="5px" fontWeight="bold">
-              Escolha para onde deseja viajar!
+              Where did you want to go?
             </Typography>
           </Box>
         </Grid>
@@ -95,7 +95,7 @@ export const SideDrawer: React.FC<DrawerTypes> = ({ openDrawer, closeDrawerHandl
         <Grid item>
           <Box>
             <Typography>
-              Criado por: <a href="https://github.com/Gsurica">@Gsurica</a>
+              Made by: <a href="https://github.com/Gsurica">@Gsurica</a>
             </Typography>
           </Box>
         </Grid>
