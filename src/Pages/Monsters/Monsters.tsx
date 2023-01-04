@@ -1,18 +1,18 @@
 import { Grid, Box, Button, TextField, InputAdornment, Typography } from "@mui/material"
 import { useQuery } from "react-query"
-import { getAllSpell } from "../../services/SpellsServices"
 import { useState } from "react"
 import CircularIndeterminate from "../../shared/components/CircularProgress"
-import { MagicInputComponent } from "./components/MagicInputComponent"
-import { MagicContent } from "./components/MagicContent"
+import { MonsterContent } from "./components/MonsterContent"
+import { MonsterInputComponent } from "./components/MonsterInputComponent"
+import { getAllMonsters } from "../../services/MonstersService"
 
-export const MagicsPage = () => {
+export const Monsters = () => {
 
-  const [spellSearch, setSpellSearch] = useState<string>("")
-  const { data, status } = useQuery(["allSpells", 4], () => getAllSpell())
+  const [monster, setMonsterSearch] = useState<string>("")
+  const { data, status } = useQuery(["allMonsters", 5], () => getAllMonsters())
 
   function onChangeHandler (event: React.ChangeEvent<HTMLInputElement>) {
-    return setSpellSearch(event.target.value)
+    return setMonsterSearch(event.target.value)
   }
 
   if (status === 'loading') {
@@ -29,12 +29,12 @@ export const MagicsPage = () => {
   return (
     <Grid container justifyContent={"center"} flexDirection={"column"} spacing={4}>
       <>
-        <MagicInputComponent onChangeHandler={onChangeHandler} spellSearch={spellSearch} />
+        <MonsterInputComponent onChangeHandler={onChangeHandler} monsterSearch={monster} />
         <Grid item>
           {
-            filterFunction(spellSearch)!.map(spell => {
+            filterFunction(monster)!.map(monster => {
               return (
-                <MagicContent spell={spell} />
+                <MonsterContent monster={monster} />
               )
             })
           }

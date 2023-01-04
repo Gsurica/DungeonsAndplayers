@@ -6,6 +6,8 @@ import { ClassMagicPage } from "../Pages/ClassMagicPage/ClassMagicPage";
 import { EsMagicPage } from "../Pages/EsMagicPage/EsMagicPage";
 import { MagicsPage } from "../Pages/MagicsPage/MagicsPage";
 import { Features } from "../Pages/Features/Features";
+import { Monsters } from "../Pages/Monsters/Monsters";
+import { EsMonsterPage } from "../Pages/EsMonsterPage/EsMonsterPage";
  
 export const AppRoutes = () => {
   return (
@@ -18,6 +20,8 @@ export const AppRoutes = () => {
         <Route element={<MagicsPage />} path="/spells" /> 
         <Route element={<EsMagicPage />} path="/spells/:spellIndex" />
         <Route element={<Features />} path="/feat" />
+        <Route element={<Monsters />} path="/monsters" />
+        <Route element={<EsMonsterPage />} path="/monsters/:monsterIndex" />
         <Route path="/" element={<Navigate to="/home" />} />
       </Routes>
     </BrowserRouter>

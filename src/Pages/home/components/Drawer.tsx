@@ -21,7 +21,8 @@ interface PageItems {
 const PageItems: PageItems[] = [
   { name: "Home", icon: <MagicBookIcon />, navigate: "/home" },
   { name: "Spells", icon: <PrincipalPageIcon />, navigate: "/spells" },
-  { name: "Features", icon: <HabilityIcon />, navigate: "/feat" }
+  { name: "Features", icon: <HabilityIcon />, navigate: "/feat" },
+  { name: "Monsters", icon: "", navigate: "/monsters" }
 ]
 
 
