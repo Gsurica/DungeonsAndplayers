@@ -32,7 +32,7 @@ export const ClassMagicTitle: React.FC<ClassMagicTitleProps> = ({ classIndex }) 
           borderRadius: 5
         }}>
           <Typography fontSize={20} fontStyle={"italic"}>
-            The bard's magic list!
+            {`The ${classIndex}'s magic list!`}
           </Typography>
         </Box>
       </Grid>

@@ -1,13 +1,18 @@
 import { Box, Button, Grid, Typography } from "@mui/material"
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ClassMagicModels } from "../../../services/interfaces/EspecificClassMagicModels"
+import { AllMagic, ClassMagicModels } from "../../../services/interfaces/EspecificClassMagicModels"
+import { MonterIndexData } from "../../../services/interfaces/MonstersModels";
+import { filterFunction } from "../../../shared/functions/FilterGeneric";
 import { scrollUp } from "../../ClassesPage/functions/ScrollUp";
 
 interface ClassMagicContentProps {
   dataContent: ClassMagicModels
+  classSpellSearch: string 
+  dataArray: AllMagic | MonterIndexData | ClassMagicModels
 }
 
-export const ClassMagicContent: React.FC<ClassMagicContentProps> = ({ dataContent }) => {
+export const ClassMagicContent: React.FC<ClassMagicContentProps> = ({ dataContent, classSpellSearch, dataArray }) => {
 
   const navigate = useNavigate();
 
@@ -31,20 +36,22 @@ export const ClassMagicContent: React.FC<ClassMagicContentProps> = ({ dataConten
           flexDirection: "column",
         }}>
           {
-            dataContent?.results.map(magic => {
-              return (
-                <Button variant="contained" sx={{
-                  marginBottom: 4
-                }}
-                onClick={() => {
-                  navigate(`/spells/${magic.index}`)
-                  scrollUp()
-                }}
-                >
-                  { magic.name }
-                </Button>
-              )
-            })
+            filterFunction(classSpellSearch, dataArray)?.length! > 0 && (
+              filterFunction(classSpellSearch, dataArray)!.map(magic => {
+                return (
+                  <Button variant="contained" sx={{
+                    marginBottom: 4
+                  }}
+                  onClick={() => {
+                    navigate(`/spells/${magic.index}`)
+                    scrollUp()
+                  }}
+                  >
+                    { magic.name }
+                  </Button>
+                )
+              })
+            )
           }
         </Box>
       </Grid>

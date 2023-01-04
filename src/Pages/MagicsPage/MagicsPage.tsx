@@ -5,6 +5,7 @@ import { useState } from "react"
 import CircularIndeterminate from "../../shared/components/CircularProgress"
 import { MagicInputComponent } from "./components/MagicInputComponent"
 import { MagicContent } from "./components/MagicContent"
+import { filterFunction } from "../../shared/functions/FilterGeneric"
 
 export const MagicsPage = () => {
 
@@ -19,20 +20,13 @@ export const MagicsPage = () => {
     return <CircularIndeterminate />
   }
 
-  function filterFunction (change: string) {
-    const dataList = data?.results
-
-    if (dataList)
-      return dataList.filter(item => item.name.toLowerCase().includes(change))
-  }
-
   return (
     <Grid container justifyContent={"center"} flexDirection={"column"} spacing={4}>
       <>
         <MagicInputComponent onChangeHandler={onChangeHandler} spellSearch={spellSearch} />
         <Grid item>
           {
-            filterFunction(spellSearch)!.map(spell => {
+            filterFunction(spellSearch, data!)!.map(spell => {
               return (
                 <MagicContent spell={spell} />
               )

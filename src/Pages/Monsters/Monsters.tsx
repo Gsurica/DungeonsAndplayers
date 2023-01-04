@@ -5,6 +5,7 @@ import CircularIndeterminate from "../../shared/components/CircularProgress"
 import { MonsterContent } from "./components/MonsterContent"
 import { MonsterInputComponent } from "./components/MonsterInputComponent"
 import { getAllMonsters } from "../../services/MonstersService"
+import { filterFunction } from "../../shared/functions/FilterGeneric"
 
 export const Monsters = () => {
 
@@ -19,20 +20,13 @@ export const Monsters = () => {
     return <CircularIndeterminate />
   }
 
-  function filterFunction (change: string) {
-    const dataList = data?.results
-
-    if (dataList)
-      return dataList.filter(item => item.name.toLowerCase().includes(change))
-  }
-
   return (
     <Grid container justifyContent={"center"} flexDirection={"column"} spacing={4}>
       <>
         <MonsterInputComponent onChangeHandler={onChangeHandler} monsterSearch={monster} />
         <Grid item>
           {
-            filterFunction(monster)!.map(monster => {
+            filterFunction(monster, data!)!.map(monster => {
               return (
                 <MonsterContent monster={monster} />
               )
