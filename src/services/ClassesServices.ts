@@ -22,3 +22,13 @@ export const getClassLevels = async (index: string) => {
   return request.data
 }
 
+export const getAllFeats = async () => {
+  const request = await axios.get(`https://www.dnd5eapi.co/api/features`)
+  return request.data
+}
+
+export const getOneFeats = async (index: string) => {
+  const request = await axios.get(`https://www.dnd5eapi.co/api/features/${index}`)
+  return request.data
+}
+

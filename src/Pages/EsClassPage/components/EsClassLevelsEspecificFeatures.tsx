@@ -203,6 +203,423 @@ export const EsClassLevelsEspecificFeatures: React.FC<EsClassLevelsEspecificFeat
     )
   }
 
+  if (classIndex === "cleric") {
+    return (
+      <>
+        <Box>
+          <Card sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }} elevation={10}> 
+            <CardContent>
+              <Box sx={{
+                width: "100%"
+              }}>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Channel Divinity Charges</Typography>
+                  <Button variant="outlined">{ item.class_specific.channel_divinity_charges }</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Destroy Undead</Typography>
+                  <Button variant="outlined">{ item.class_specific.destroy_undead_cr }</Button>
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
+          </Box>
+      </>
+    )
+  }
+
+  if (classIndex === "druid") {
+    return (
+      <>
+        <Box>
+          <Card sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }} elevation={10}> 
+            <CardContent>
+              <Box sx={{
+                width: "100%"
+              }}>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Wild shape Fly</Typography>
+                  <Button variant="outlined">{ item.class_specific.wild_shape_fly ? "can use!" : "can't use!" }</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>wild shape swim</Typography>
+                  <Button variant="outlined">{ item.class_specific.wild_shape_swim ? "can use!" : "can't use!" }</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>wild shape max</Typography>
+                  <Button variant="outlined">{ item.class_specific.wild_shape_max_cr}</Button>
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
+          </Box>
+      </>
+    )
+  }
+
+  if (classIndex === "fighter") {
+    return (
+      <>
+        <Box>
+          <Card sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }} elevation={10}> 
+            <CardContent>
+              <Box sx={{
+                width: "100%"
+              }}>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Action surges</Typography>
+                  <Button variant="outlined">{ item.class_specific.action_surges}</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Extra attacks</Typography>
+                  <Button variant="outlined">{ item.class_specific.extra_attacks}</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>indomitable uses</Typography>
+                  <Button variant="outlined">{ item.class_specific.indomitable_uses}</Button>
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
+          </Box>
+      </>
+    )
+  }
+
+  if (classIndex === "monk") {
+    return (
+      <>
+        <Box>
+          <Card sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }} elevation={10}> 
+            <CardContent>
+              <Box sx={{
+                width: "100%"
+              }}>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Ki points</Typography>
+                  <Button variant="outlined">{ item.class_specific.ki_points}</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Unarmored moviment</Typography>
+                  <Button variant="outlined">{ item.class_specific.unarmored_movement}</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Martial Arts</Typography>
+                  <Button variant="outlined" onClick={() => openModalhandler()}>
+                    Click!
+                  </Button>
+                  <InformativeDrawer nameOfClass={classIndex!} item={item} openDrawer={isOpen} closeDrawerHandler={openModalhandler} />
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
+          </Box>
+      </>
+    )
+  }
+
+  if (classIndex === "paladin") {
+    return (
+      <>
+        <Box>
+          <Card sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }} elevation={10}> 
+            <CardContent>
+              <Box sx={{
+                width: "100%"
+              }}>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Aura range</Typography>
+                  <Button variant="outlined">{ item.class_specific.aura_range}</Button>
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
+          </Box>
+      </>
+    )
+  }
+
+  if (classIndex === "ranger") {
+    return (
+      <>
+        <Box>
+          <Card sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }} elevation={10}> 
+            <CardContent>
+              <Box sx={{
+                width: "100%"
+              }}>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Favored Enemies</Typography>
+                  <Button variant="outlined">{ item.class_specific.favored_enemies}</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Favored terrains</Typography>
+                  <Button variant="outlined">{ item.class_specific.favored_terrain}</Button>
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
+          </Box>
+      </>
+    )
+  }
+
+  if (classIndex === "rogue") {
+    return (
+      <>
+        <Box>
+          <Card sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }} elevation={10}> 
+            <CardContent>
+              <Box sx={{
+                width: "100%"
+              }}>
+              </Box>
+              <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Sneak Attack</Typography>
+                  <Button variant="outlined" onClick={() => openModalhandler()}>
+                    Click!
+                  </Button>
+                  <InformativeDrawer nameOfClass={classIndex!} item={item} openDrawer={isOpen} closeDrawerHandler={openModalhandler} />
+                </Box>
+            </CardContent>
+          </Card>
+          </Box>
+      </>
+    )
+  }
+
+  if (classIndex === "warlock") {
+    return (
+      <>
+        <Box>
+          <Card sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }} elevation={10}> 
+            <CardContent>
+              <Box sx={{
+                width: "100%"
+              }}>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Invocations knowns</Typography>
+                  <Button variant="outlined">{ item.class_specific.invocations_known}</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Mystic Arcanum lvl6</Typography>
+                  <Button variant="outlined">{ item.class_specific.mystic_arcanum_level_6}</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Mystic Arcanum lvl7</Typography>
+                  <Button variant="outlined">{ item.class_specific.mystic_arcanum_level_7}</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Mystic Arcanum lvl8</Typography>
+                  <Button variant="outlined">{ item.class_specific.mystic_arcanum_level_8}</Button>
+                </Box>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Mystic Arcanum lvl9</Typography>
+                  <Button variant="outlined">{ item.class_specific.mystic_arcanum_level_9}</Button>
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
+          </Box>
+      </>
+    )
+  }
+
+  if (classIndex === "wizard") {
+    return (
+      <>
+        <Box>
+          <Card sx={{
+            marginTop: 1,
+            marginBottom: 1
+          }} elevation={10}> 
+            <CardContent>
+              <Box sx={{
+                width: "100%"
+              }}>
+                <Box sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: '100%',
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginBottom: 1
+                }}>
+                  <Typography>Arcane recovery</Typography>
+                  <Button variant="outlined">{ item.class_specific.arcane_recovery_levels}</Button>
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
+          </Box>
+      </>
+    )
+  }
+
   return (
     <></>
   )

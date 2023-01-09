@@ -1,6 +1,8 @@
 import { BarbarianEspecifiqueModel } from "./EsClassModels/BarbarianModels"
 import { BardlevelModels } from "./EsClassModels/BardModels"
+import { MartialArts } from "./EsClassModels/MonkModels"
 import { RangerLevel } from "./EsClassModels/RangerModels"
+import { RogueModels } from "./EsClassModels/RogueModels"
 import { Sorcererlevel, SorcererSpellsModels } from "./EsClassModels/SorcererModels"
 
 export interface Results {
@@ -131,6 +133,41 @@ export interface ClassSpecificModels {
   brutal_critical_dice: number
   rage_count: number
   rage_damage_bonus: number
+
+  // cleric 
+  channel_divinity_charges: number
+  destroy_undead_cr: number 
+
+  // druid 
+  wild_shape_fly: boolean
+  wild_shape_max_cr: number
+  wild_shape_swim: true
+
+  // figther
+  action_surges: number 
+  extra_attacks: number 
+  indomitable_uses: number
+
+  // monk 
+  ki_points: number 
+  martial_arts: MartialArts
+  unarmored_movement: number 
+
+  // paladin 
+  aura_range: number
+
+  // rogue 
+  sneak_attack: RogueModels 
+
+  // warlock 
+  invocations_known: number
+  mystic_arcanum_level_6: number
+  mystic_arcanum_level_7: number
+  mystic_arcanum_level_8: number
+  mystic_arcanum_level_9: number
+
+  // wizared 
+  arcane_recovery_levels: number
 }
 
 
