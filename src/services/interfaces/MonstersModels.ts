@@ -62,7 +62,7 @@ export interface MonsterSpeedsModels {
 
 export interface MonsterProficienciesModels {
   value: number
-  profiency: MonsterMetaData
+  proficiency: MonsterMetaData
 }
 
 export interface MonsterModel {

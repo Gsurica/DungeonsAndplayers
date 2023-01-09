@@ -1,3 +1,8 @@
+import { BarbarianEspecifiqueModel } from "./EsClassModels/BarbarianModels"
+import { BardlevelModels } from "./EsClassModels/BardModels"
+import { RangerLevel } from "./EsClassModels/RangerModels"
+import { Sorcererlevel, SorcererSpellsModels } from "./EsClassModels/SorcererModels"
+
 export interface Results {
   results: ClassData[]
 }
@@ -92,6 +97,40 @@ export interface StartingEquipmentOptionsFromModel {
   option_type: string
   count: number
   of: ClassData
+}
+
+export interface ClassLevelModels {
+  ability_score_bonuses: number
+  class: ClassData
+  class_specific: ClassSpecificModels 
+  features: ClassData[]
+  index: string
+  level: number
+  prof_bonus: number
+  url: string
+}
+
+export interface ClassSpecificModels {
+  // ranger
+  favored_enemies: number 
+  favored_terrain: number
+
+  // sorcerer
+  creating_spell_slots: SorcererSpellsModels[] 
+  metamagic_known: number
+  sorcery_points: number
+
+  // bard
+  bardic_inspiration_die: number
+  magical_secrets_max_5: number
+  magical_secrets_max_7: number
+  magical_secrets_max_9: number
+  song_of_rest_die: number
+
+  // barbarian
+  brutal_critical_dice: number
+  rage_count: number
+  rage_damage_bonus: number
 }
 
 

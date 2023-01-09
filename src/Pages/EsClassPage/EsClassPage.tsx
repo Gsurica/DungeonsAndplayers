@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
 import { Grid, Box, Card, CardContent, CardMedia, Typography, Button } from '@mui/material'
-import { getOneClass } from '../../services/ClassesServices';
+import { getClassLevels, getOneClass } from '../../services/ClassesServices';
 import { useParams } from 'react-router-dom';
 import { EsClassImage } from '../ClassesPage/functions/ClassImage';
 import CircularIndeterminate from '../../shared/components/CircularProgress';
@@ -10,15 +10,14 @@ import { EsClassItensProficiency } from './components/EsClassItensProficiency';
 import { EsClassSkills } from './components/EsClassSkills';
 import { EsClassSpellCasting } from './components/EsClassSpellCasting';
 import { EsClassSpellCastingButton } from './components/EsClassSpellCastingButton';
-import { EquipmentImagesRandom, randomEquipmentNumber } from '../../shared/functions/EquipmentImagesRandom';
 import { EsClassEquipment } from './components/EsClassEquipment';
+import { EsClassLevels } from './components/EsClassLevels';
 
 export const EsClassPage = () => {
 
   const { classIndex } = useParams()
 
-  const { data, status } = useQuery(["espClass", 1], () => getOneClass(classIndex!));
-  console.log(data)
+  const { data, status } = useQuery(["espClass", 1], () => getOneClass(classIndex!))
 
   if (status === 'loading') {
     return (
@@ -62,6 +61,7 @@ export const EsClassPage = () => {
               </Box>
               <EsClassSpellCastingButton dataSpellCastingButton={data!} />
               <EsClassEquipment dataEquipment={data!} />
+              <EsClassLevels />
             </CardContent>
 
           </Card>

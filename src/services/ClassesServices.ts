@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ClassMetaData, Results } from './interfaces/classesModels';
+import { ClassLevelModels,  ClassMetaData, Results } from './interfaces/classesModels';
 import { ClassMagicModels } from './interfaces/EspecificClassMagicModels';
 
 export const getUserClasses = async () => {
@@ -16,3 +16,9 @@ export const getClassMagic = async (index: string) => {
   const request = await axios.get<ClassMagicModels>(`https://www.dnd5eapi.co/api/classes/${index}/spells`)
   return request.data
 }
+
+export const getClassLevels = async (index: string) => {
+  const request = await axios.get<ClassLevelModels[]>(`https://www.dnd5eapi.co/api/classes/${index}/levels`)
+  return request.data
+}
+

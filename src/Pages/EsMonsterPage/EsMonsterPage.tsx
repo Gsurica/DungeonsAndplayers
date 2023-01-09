@@ -471,6 +471,57 @@ export const EsMonsterPage = () => {
             </CardContent>
           </Card>
 
+          <Card sx={{
+            marginTop: 3
+          }}>
+            <CardContent>
+              <Box sx={{
+                display: "flex",
+                justifyContent: "center"
+              }}>
+                <Typography variant="h4">
+                  Profeciencies
+                </Typography>
+              </Box>
+              <Box sx={{
+                display: "flex",
+                justifyContent: "center"
+              }}>
+                <Button sx={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  marginTop: 1,
+                  width: "100%"
+                }} variant="outlined">
+                  <Typography sx={{ marginBottom: 2 }}>Proficiency</Typography>
+                  <>
+                    {
+                      data?.proficiencies.map ? (
+                        data.proficiencies.map(prof => {
+                          return (
+                            <Box sx={{
+                              display: "flex",
+                              width: "100%",
+                              justifyContent: "space-between",
+                              padding: 1
+                            }}>
+                              <Typography>{ prof.proficiency.name }</Typography>
+                              <Typography color="black">{ prof.value }</Typography>
+                            </Box>
+                          )
+                        })
+                      ) : (
+                        <></>
+                      )
+                    }
+                  </>
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+
       </Grid>
 
     </Grid>
