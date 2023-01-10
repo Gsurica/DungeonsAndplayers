@@ -9,6 +9,10 @@ import { Features } from "../Pages/Features/Features";
 import { Monsters } from "../Pages/Monsters/Monsters";
 import { EsMonsterPage } from "../Pages/EsMonsterPage/EsMonsterPage";
 import { EsFeaturesPage } from "../Pages/EsFeaturesPage/EsFeaturesPage";
+import { Skills } from "../Pages/Skills/Skills";
+import { EsSkillPage } from "../Pages/EsSkillPages/EsSkillPage";
+import { Proficiencies } from "../Pages/Proficiencies/Proficiencies";
+import { EsProficienciesPage } from "../Pages/EsPorficienciesPage/EsProficienciesPage";
  
 export const AppRoutes = () => {
   return (
@@ -24,6 +28,10 @@ export const AppRoutes = () => {
         <Route element={<EsFeaturesPage />} path="/feat/:featIndex" />
         <Route element={<Monsters />} path="/monsters" />
         <Route element={<EsMonsterPage />} path="/monsters/:monsterIndex" />
+        <Route element={<Skills />} path="/skills" />
+        <Route element={<EsSkillPage />} path="/skills/:skillIndex" />
+        <Route element={<Proficiencies />} path="/proficiencies" />
+        <Route element={<EsProficienciesPage />} path="/proficiencies/:proficienciesIndex" />
         <Route path="/" element={<Navigate to="/home" />} />
       </Routes>
     </BrowserRouter>

@@ -1,11 +1,17 @@
 import { Box, Typography, Button } from "@mui/material"
 import { ClassMetaData } from "../../../services/interfaces/classesModels"
+import { useNavigate } from "react-router-dom"
 
 interface EsClassSkillsTypes {
   dataSkills: ClassMetaData
 }
 
 export const EsClassSkills: React.FC<EsClassSkillsTypes> = ({ dataSkills }) => {
+
+  console.log(dataSkills)
+
+  const navigate = useNavigate()
+
   return (
     <Box>
       <Box sx={{
@@ -77,7 +83,7 @@ export const EsClassSkills: React.FC<EsClassSkillsTypes> = ({ dataSkills }) => {
                           maxWidth: 200,
                           width: "100%",
                           marginBottom: "10px"
-                        }} variant="contained">
+                        }} variant="contained" onClick={() => navigate(`/skills/${prof.item.index}`)}>
                           { prof.item !== undefined && (
                             prof.item.name
                           ) }

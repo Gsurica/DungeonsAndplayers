@@ -1,6 +1,9 @@
 import axios from 'axios'
 import { ClassLevelModels,  ClassMetaData, Results } from './interfaces/classesModels';
 import { ClassMagicModels } from './interfaces/EspecificClassMagicModels';
+import { FeaturesModels } from './interfaces/FeaturesModels';
+import { ProfiencienciesModels } from './interfaces/ProficienciesModels';
+import { SkillMetaData, SkillModelData, SkillsModels } from './interfaces/SkillsModels';
 
 export const getUserClasses = async () => {
   const request = await axios.get<Results>("https://www.dnd5eapi.co/api/classes/");
@@ -28,7 +31,22 @@ export const getAllFeats = async () => {
 }
 
 export const getOneFeats = async (index: string) => {
-  const request = await axios.get(`https://www.dnd5eapi.co/api/features/${index}`)
+  const request = await axios.get<FeaturesModels>(`https://www.dnd5eapi.co/api/features/${index}`)
+  return request.data
+}
+
+export const getAllskills = async () => {
+  const request = await axios.get<SkillsModels>(`https://www.dnd5eapi.co/api/skills`)
+  return request.data
+}
+
+export const getOneSkill = async (index: string) => {
+  const request = await axios.get<SkillModelData>(`https://www.dnd5eapi.co/api/skills/${index}`)
+  return request.data
+}
+
+export const getAllProficiencies = async () => {
+  const request = await axios.get<ProfiencienciesModels>(`https://www.dnd5eapi.co/api/proficiencies`)
   return request.data
 }
 
